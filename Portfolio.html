@@ -179,8 +179,9 @@
     <!-- contact section design -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
-
-        <form action="https://formsubmit.co/kavinda.appuhamy@gmail.com" method="POST" onsubmit="return validateForm()">
+    
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="912598fc-b412-4168-872b-4e6e4e4793f8">
             <div class="input-box">
                 <input type="text" name="name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Email Address" required>
@@ -191,44 +192,9 @@
             </div>
             <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             <input type="submit" value="Send Message" class="btn">
+            <div id="statusMessage" style="margin-top: 1rem; text-align: center;"></div>
         </form>
-        
-        <script>
-        function validateForm() {
-            var name = document.forms[0]["name"].value;
-            var email = document.forms[0]["email"].value;
-            var phone = document.forms[0]["phone"].value;
-            var subject = document.forms[0]["subject"].value;
-        
-            // Regular expressions for validation
-            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-            var phonePattern = /^[0-9]{10}$/;
-        
-            if (name.trim() === "") {
-                alert("Please enter your Full Name.");
-                return false;
-            }
-        
-            if (!email.match(emailPattern)) {
-                alert("Please enter a valid Email Address.");
-                return false;
-            }
-        
-            if (!phone.match(phonePattern)) {
-                alert("Please enter a valid Mobile Number.");
-                return false;
-            }
-        
-            if (subject.trim() === "") {
-                alert("Please enter the Email Subject.");
-                return false;
-            }
-        
-            // If all validations pass, the form will be submitted
-            return true;
-        }
-        </script>
-            
+    
     </section>
 
     <!-- footer design -->
